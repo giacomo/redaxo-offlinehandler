@@ -7,8 +7,7 @@
  *
  * @var rex_addon
  */
-if (rex::isBackend()) {
-} else {
+if (!rex::isBackend()) {
     rex_extension::register('PACKAGES_INCLUDED', function () {
         if (rex_article::getCurrent() instanceof rex_article && rex_article::getCurrent()->getValue('status') == 0 && !rex_backend_login::hasSession()) {
 
